@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 2 Indicadores radares/frota {radar/frota} | Relatório Velocidades</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 2 Indicadores radares/frota {radar/frota} | Relatório Velocidades" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 2 Indicadores radares/frota {radar/frota} | Relatório Velocidades" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Arthur Hideio Noguti" />
+
+
+<meta name="date" content="2024-07-26" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="indicador-radarkm.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introdução</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#partes"><i class="fa fa-check"></i><b>1.1</b> Partes</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#observações"><i class="fa fa-check"></i><b>1.2</b> Observações</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="indicadores-radaresfrota-radarfrota.html"><a href="indicadores-radaresfrota-radarfrota.html"><i class="fa fa-check"></i><b>2</b> Indicadores radares/frota {radar/frota}</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="indicadores-radaresfrota-radarfrota.html"><a href="indicadores-radaresfrota-radarfrota.html#bibliotecas"><i class="fa fa-check"></i><b>2.1</b> Bibliotecas</a></li>
+<li class="chapter" data-level="2.2" data-path="indicadores-radaresfrota-radarfrota.html"><a href="indicadores-radaresfrota-radarfrota.html#pré-processamento"><i class="fa fa-check"></i><b>2.2</b> Pré processamento</a></li>
+<li class="chapter" data-level="2.3" data-path="indicadores-radaresfrota-radarfrota.html"><a href="indicadores-radaresfrota-radarfrota.html#cálculo-dos-indicadores-e-data-frame-final"><i class="fa fa-check"></i><b>2.3</b> Cálculo dos indicadores e <em>Data Frame</em> final</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="indicadores-radaresfrota-radarfrota.html"><a href="indicadores-radaresfrota-radarfrota.html#i1-ao-i9"><i class="fa fa-check"></i><b>2.3.1</b> I<sub>1</sub> ao I<sub>9</sub></a></li>
+<li class="chapter" data-level="2.3.2" data-path="indicadores-radaresfrota-radarfrota.html"><a href="indicadores-radaresfrota-radarfrota.html#geração-do-data-frame"><i class="fa fa-check"></i><b>2.3.2</b> Geração do <em>Data Frame</em></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="indicador-radarkm.html"><a href="indicador-radarkm.html"><i class="fa fa-check"></i><b>3</b> Indicador radar/Km</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="indicador-radarkm.html"><a href="indicador-radarkm.html#bibliotecas-1"><i class="fa fa-check"></i><b>3.1</b> Bibliotecas</a></li>
+<li class="chapter" data-level="3.2" data-path="indicador-radarkm.html"><a href="indicador-radarkm.html#pré-processamento-1"><i class="fa fa-check"></i><b>3.2</b> Pré processamento</a></li>
+<li class="chapter" data-level="3.3" data-path="indicador-radarkm.html"><a href="indicador-radarkm.html#chapters-and-sub-chapters"><i class="fa fa-check"></i><b>3.3</b> Chapters and sub-chapters</a></li>
+<li class="chapter" data-level="3.4" data-path="indicador-radarkm.html"><a href="indicador-radarkm.html#captioned-figures-and-tables"><i class="fa fa-check"></i><b>3.4</b> Captioned figures and tables</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="parts.html"><a href="parts.html"><i class="fa fa-check"></i><b>4</b> Parts</a></li>
+<li class="chapter" data-level="5" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html"><i class="fa fa-check"></i><b>5</b> Footnotes and citations</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#footnotes"><i class="fa fa-check"></i><b>5.1</b> Footnotes</a></li>
+<li class="chapter" data-level="5.2" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#citations"><i class="fa fa-check"></i><b>5.2</b> Citations</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="blocks.html"><a href="blocks.html"><i class="fa fa-check"></i><b>6</b> Blocks</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="blocks.html"><a href="blocks.html#equations"><i class="fa fa-check"></i><b>6.1</b> Equations</a></li>
+<li class="chapter" data-level="6.2" data-path="blocks.html"><a href="blocks.html#theorems-and-proofs"><i class="fa fa-check"></i><b>6.2</b> Theorems and proofs</a></li>
+<li class="chapter" data-level="6.3" data-path="blocks.html"><a href="blocks.html#callout-blocks"><i class="fa fa-check"></i><b>6.3</b> Callout blocks</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>7</b> Sharing your book</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="sharing-your-book.html"><a href="sharing-your-book.html#publishing"><i class="fa fa-check"></i><b>7.1</b> Publishing</a></li>
+<li class="chapter" data-level="7.2" data-path="sharing-your-book.html"><a href="sharing-your-book.html#pages"><i class="fa fa-check"></i><b>7.2</b> 404 pages</a></li>
+<li class="chapter" data-level="7.3" data-path="sharing-your-book.html"><a href="sharing-your-book.html#metadata-for-sharing"><i class="fa fa-check"></i><b>7.3</b> Metadata for sharing</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Relatório Velocidades</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="indicadores-radaresfrota-radarfrota" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Capítulo 2</span> Indicadores radares/frota {radar/frota}<a href="indicadores-radaresfrota-radarfrota.html#indicadores-radaresfrota-radarfrota" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="bibliotecas" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Bibliotecas<a href="indicadores-radaresfrota-radarfrota.html#bibliotecas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Para realizar o cálculo dos indicadores foram utilizados as seguintes bibliotecas:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="indicadores-radaresfrota-radarfrota.html#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="indicadores-radaresfrota-radarfrota.html#cb1-2" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb1-3"><a href="indicadores-radaresfrota-radarfrota.html#cb1-3" tabindex="-1"></a><span class="co"># devtools::install_github(&quot;jotasaraiva/fleetbr&quot;)</span></span>
+<span id="cb1-4"><a href="indicadores-radaresfrota-radarfrota.html#cb1-4" tabindex="-1"></a><span class="fu">library</span>(fleetbr)</span></code></pre></div>
+<p>Note que tem uma parte do <em>script</em> que está depois de um <code>#</code>, caso vocẽ não tenha instalado em sua máquina a base de dados sobre a frota de veículos no Brasil basta retirar o <code>#</code> e rodar o <em>script</em>. Eu não vou entrar em detalhes técnicos nesse documento, como por exemplo o que significa cada indicador e sua função, pois isto é apresentado no relatório em si.</p>
+</div>
+<div id="pré-processamento" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Pré processamento<a href="indicadores-radaresfrota-radarfrota.html#pré-processamento" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Além dessa base de dados, será necessário também a base sobre os radares, que será importado pelo arquivo .csv, como é demonstrado pelo <em>script</em> abaixo:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="indicadores-radaresfrota-radarfrota.html#cb2-1" tabindex="-1"></a>radares <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">&quot;/home/silvana/Downloads/INDICADORES_RADARES_VELOCIDADE_UF (indicador velocidade, infrações, mortalidade)).xlsx&quot;</span>, <span class="at">sheet =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p>Note que o parâmetro <code>sheet = 2</code> indica que queremos apenas os dados da segunda aba da planilha identificada. Posterior a isso é filtrado ambas bases de dados para apenas as tuplas que contenham a classe indicada pelo estudo.<br />
+Na base dos Radares é filtrado apenas os radares que sejam do tipo fixo, e na base da frota, a frota relativa ao mês de dezembro do ano de 2023 e o modal seja o total de todos. Também é feito um <code>rename</code> da coluna <code>uf</code> da base de dados da frota, para que as duas bases possuam uma coluna que contenha os mesmos valores (no caso as siglas de cada unidade da federação) para depois utilizar as funções de <code>join</code>(união).</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="indicadores-radaresfrota-radarfrota.html#cb3-1" tabindex="-1"></a>radares <span class="ot">&lt;-</span> radares <span class="sc">%&gt;%</span> </span>
+<span id="cb3-2"><a href="indicadores-radaresfrota-radarfrota.html#cb3-2" tabindex="-1"></a>  <span class="fu">filter</span>(TipoMedidor <span class="sc">==</span> <span class="st">&quot;Fixo&quot;</span>)</span>
+<span id="cb3-3"><a href="indicadores-radaresfrota-radarfrota.html#cb3-3" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="indicadores-radaresfrota-radarfrota.html#cb3-4" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="indicadores-radaresfrota-radarfrota.html#cb3-5" tabindex="-1"></a>frota_2023_TOTAL <span class="ot">&lt;-</span> fleetbr <span class="sc">%&gt;%</span> </span>
+<span id="cb3-6"><a href="indicadores-radaresfrota-radarfrota.html#cb3-6" tabindex="-1"></a>  <span class="fu">filter</span>(ano <span class="sc">==</span> <span class="st">&quot;2023&quot;</span>,</span>
+<span id="cb3-7"><a href="indicadores-radaresfrota-radarfrota.html#cb3-7" tabindex="-1"></a>         mes <span class="sc">==</span> <span class="st">&quot;12&quot;</span>,</span>
+<span id="cb3-8"><a href="indicadores-radaresfrota-radarfrota.html#cb3-8" tabindex="-1"></a>         modal <span class="sc">==</span> <span class="st">&quot;TOTAL&quot;</span>)</span>
+<span id="cb3-9"><a href="indicadores-radaresfrota-radarfrota.html#cb3-9" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="indicadores-radaresfrota-radarfrota.html#cb3-10" tabindex="-1"></a>frota_2023_TOTAL_renomeada <span class="ot">&lt;-</span> <span class="fu">rename</span>(frota_2023_TOTAL, <span class="at">SiglaUf =</span> uf)</span></code></pre></div>
+</div>
+<div id="cálculo-dos-indicadores-e-data-frame-final" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Cálculo dos indicadores e <em>Data Frame</em> final<a href="indicadores-radaresfrota-radarfrota.html#cálculo-dos-indicadores-e-data-frame-final" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="i1-ao-i9" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> I<sub>1</sub> ao I<sub>9</sub><a href="indicadores-radaresfrota-radarfrota.html#i1-ao-i9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Todos os indicadores possuem um <em>script</em> semelhante entre si, mudando apenas os filtros que levam cada um, sendo apenas o I<sub>4</sub> que possuem um código diferente dentre eles, segue abaixo o <em>script</em> para a construção de todos indicadores:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="indicadores-radaresfrota-radarfrota.html#cb4-1" tabindex="-1"></a><span class="co"># i1 (aprovados+reparados)/frota ####</span></span>
+<span id="cb4-2"><a href="indicadores-radaresfrota-radarfrota.html#cb4-2" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="indicadores-radaresfrota-radarfrota.html#cb4-3" tabindex="-1"></a>aprov_repari1 <span class="ot">&lt;-</span> radares <span class="sc">%&gt;%</span> </span>
+<span id="cb4-4"><a href="indicadores-radaresfrota-radarfrota.html#cb4-4" tabindex="-1"></a>  <span class="fu">filter</span>(UltimoResultado <span class="sc">!=</span> <span class="st">&quot;Reprovado&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-5"><a href="indicadores-radaresfrota-radarfrota.html#cb4-5" tabindex="-1"></a>  <span class="fu">group_by</span>(SiglaUf) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-6"><a href="indicadores-radaresfrota-radarfrota.html#cb4-6" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">quantidade =</span> <span class="fu">n</span>())</span>
+<span id="cb4-7"><a href="indicadores-radaresfrota-radarfrota.html#cb4-7" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="indicadores-radaresfrota-radarfrota.html#cb4-8" tabindex="-1"></a>i1 <span class="ot">&lt;-</span> <span class="fu">right_join</span>(frota_2023_TOTAL_renomeada, aprov_repari1, <span class="at">by =</span> <span class="st">&quot;SiglaUf&quot;</span>)</span>
+<span id="cb4-9"><a href="indicadores-radaresfrota-radarfrota.html#cb4-9" tabindex="-1"></a>i1 <span class="ot">&lt;-</span> i1 <span class="sc">%&gt;%</span> </span>
+<span id="cb4-10"><a href="indicadores-radaresfrota-radarfrota.html#cb4-10" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">i1 =</span> (quantidade<span class="sc">/</span>frota)<span class="sc">*</span><span class="dv">10</span><span class="sc">^</span><span class="dv">4</span>)</span>
+<span id="cb4-11"><a href="indicadores-radaresfrota-radarfrota.html#cb4-11" tabindex="-1"></a><span class="co"># i2 (urb aprov + urb repar / frota) ####</span></span>
+<span id="cb4-12"><a href="indicadores-radaresfrota-radarfrota.html#cb4-12" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="indicadores-radaresfrota-radarfrota.html#cb4-13" tabindex="-1"></a>aprov_repari2 <span class="ot">&lt;-</span> radares <span class="sc">%&gt;%</span> </span>
+<span id="cb4-14"><a href="indicadores-radaresfrota-radarfrota.html#cb4-14" tabindex="-1"></a>  <span class="fu">filter</span>(UltimoResultado <span class="sc">!=</span> <span class="st">&quot;Reprovado&quot;</span>,</span>
+<span id="cb4-15"><a href="indicadores-radaresfrota-radarfrota.html#cb4-15" tabindex="-1"></a>         Tipo <span class="sc">==</span> <span class="st">&quot;Via Urbana&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-16"><a href="indicadores-radaresfrota-radarfrota.html#cb4-16" tabindex="-1"></a>  <span class="fu">group_by</span>(SiglaUf) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-17"><a href="indicadores-radaresfrota-radarfrota.html#cb4-17" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">quantidade =</span> <span class="fu">n</span>())</span>
+<span id="cb4-18"><a href="indicadores-radaresfrota-radarfrota.html#cb4-18" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="indicadores-radaresfrota-radarfrota.html#cb4-19" tabindex="-1"></a>i2 <span class="ot">&lt;-</span> <span class="fu">right_join</span>(frota_2023_TOTAL_renomeada, aprov_repari2, <span class="at">by =</span> <span class="st">&quot;SiglaUf&quot;</span>)</span>
+<span id="cb4-20"><a href="indicadores-radaresfrota-radarfrota.html#cb4-20" tabindex="-1"></a>i2 <span class="ot">&lt;-</span> i2 <span class="sc">%&gt;%</span> </span>
+<span id="cb4-21"><a href="indicadores-radaresfrota-radarfrota.html#cb4-21" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">i2 =</span> (quantidade<span class="sc">/</span>frota)<span class="sc">*</span><span class="dv">10</span><span class="sc">^</span><span class="dv">4</span>)</span>
+<span id="cb4-22"><a href="indicadores-radaresfrota-radarfrota.html#cb4-22" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="indicadores-radaresfrota-radarfrota.html#cb4-23" tabindex="-1"></a><span class="co"># i3 (rod aprov + rod repar / frota) ####</span></span>
+<span id="cb4-24"><a href="indicadores-radaresfrota-radarfrota.html#cb4-24" tabindex="-1"></a></span>
+<span id="cb4-25"><a href="indicadores-radaresfrota-radarfrota.html#cb4-25" tabindex="-1"></a>aprov_repari3 <span class="ot">&lt;-</span> radares <span class="sc">%&gt;%</span> </span>
+<span id="cb4-26"><a href="indicadores-radaresfrota-radarfrota.html#cb4-26" tabindex="-1"></a>  <span class="fu">filter</span>(UltimoResultado <span class="sc">!=</span> <span class="st">&quot;Reprovado&quot;</span>,</span>
+<span id="cb4-27"><a href="indicadores-radaresfrota-radarfrota.html#cb4-27" tabindex="-1"></a>         Tipo <span class="sc">==</span> <span class="st">&quot;Rodovia&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-28"><a href="indicadores-radaresfrota-radarfrota.html#cb4-28" tabindex="-1"></a>  <span class="fu">group_by</span>(SiglaUf) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-29"><a href="indicadores-radaresfrota-radarfrota.html#cb4-29" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">quantidade =</span> <span class="fu">n</span>())</span>
+<span id="cb4-30"><a href="indicadores-radaresfrota-radarfrota.html#cb4-30" tabindex="-1"></a></span>
+<span id="cb4-31"><a href="indicadores-radaresfrota-radarfrota.html#cb4-31" tabindex="-1"></a></span>
+<span id="cb4-32"><a href="indicadores-radaresfrota-radarfrota.html#cb4-32" tabindex="-1"></a>i3 <span class="ot">&lt;-</span> <span class="fu">right_join</span>(frota_2023_TOTAL_renomeada, aprov_repari3, <span class="at">by =</span> <span class="st">&quot;SiglaUf&quot;</span>)</span>
+<span id="cb4-33"><a href="indicadores-radaresfrota-radarfrota.html#cb4-33" tabindex="-1"></a>i3 <span class="ot">&lt;-</span> i3 <span class="sc">%&gt;%</span> </span>
+<span id="cb4-34"><a href="indicadores-radaresfrota-radarfrota.html#cb4-34" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">i3 =</span> (quantidade<span class="sc">/</span>frota)<span class="sc">*</span><span class="dv">10</span><span class="sc">^</span><span class="dv">4</span>)</span>
+<span id="cb4-35"><a href="indicadores-radaresfrota-radarfrota.html#cb4-35" tabindex="-1"></a></span>
+<span id="cb4-36"><a href="indicadores-radaresfrota-radarfrota.html#cb4-36" tabindex="-1"></a><span class="co"># i4 (aprovados/(aprovados+reparados)) ####</span></span>
+<span id="cb4-37"><a href="indicadores-radaresfrota-radarfrota.html#cb4-37" tabindex="-1"></a></span>
+<span id="cb4-38"><a href="indicadores-radaresfrota-radarfrota.html#cb4-38" tabindex="-1"></a>aprov <span class="ot">&lt;-</span> radares <span class="sc">%&gt;%</span> </span>
+<span id="cb4-39"><a href="indicadores-radaresfrota-radarfrota.html#cb4-39" tabindex="-1"></a>  <span class="fu">filter</span>(UltimoResultado <span class="sc">==</span> <span class="st">&quot;Aprovado&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-40"><a href="indicadores-radaresfrota-radarfrota.html#cb4-40" tabindex="-1"></a>  <span class="fu">group_by</span>(SiglaUf) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-41"><a href="indicadores-radaresfrota-radarfrota.html#cb4-41" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">quantidade_aprov =</span> <span class="fu">n</span>())</span>
+<span id="cb4-42"><a href="indicadores-radaresfrota-radarfrota.html#cb4-42" tabindex="-1"></a></span>
+<span id="cb4-43"><a href="indicadores-radaresfrota-radarfrota.html#cb4-43" tabindex="-1"></a></span>
+<span id="cb4-44"><a href="indicadores-radaresfrota-radarfrota.html#cb4-44" tabindex="-1"></a>i4 <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(aprov, aprov_repari1, <span class="at">by =</span> <span class="st">&quot;SiglaUf&quot;</span>)</span>
+<span id="cb4-45"><a href="indicadores-radaresfrota-radarfrota.html#cb4-45" tabindex="-1"></a>i4 <span class="ot">&lt;-</span> i4 <span class="sc">%&gt;%</span> </span>
+<span id="cb4-46"><a href="indicadores-radaresfrota-radarfrota.html#cb4-46" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">i4 =</span> quantidade_aprov<span class="sc">/</span>quantidade)</span>
+<span id="cb4-47"><a href="indicadores-radaresfrota-radarfrota.html#cb4-47" tabindex="-1"></a></span>
+<span id="cb4-48"><a href="indicadores-radaresfrota-radarfrota.html#cb4-48" tabindex="-1"></a><span class="co"># i5 (aprovados+reparados)/frota com v = 40 km/h ####</span></span>
+<span id="cb4-49"><a href="indicadores-radaresfrota-radarfrota.html#cb4-49" tabindex="-1"></a>aprov_repari5 <span class="ot">&lt;-</span> radares <span class="sc">%&gt;%</span> </span>
+<span id="cb4-50"><a href="indicadores-radaresfrota-radarfrota.html#cb4-50" tabindex="-1"></a>  <span class="fu">filter</span>(UltimoResultado <span class="sc">!=</span> <span class="st">&quot;Reprovado&quot;</span>,</span>
+<span id="cb4-51"><a href="indicadores-radaresfrota-radarfrota.html#cb4-51" tabindex="-1"></a>         VelocidadeNominal <span class="sc">==</span> <span class="st">&quot;40&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-52"><a href="indicadores-radaresfrota-radarfrota.html#cb4-52" tabindex="-1"></a>  <span class="fu">group_by</span>(SiglaUf) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-53"><a href="indicadores-radaresfrota-radarfrota.html#cb4-53" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">quantidade =</span> <span class="fu">n</span>())</span>
+<span id="cb4-54"><a href="indicadores-radaresfrota-radarfrota.html#cb4-54" tabindex="-1"></a></span>
+<span id="cb4-55"><a href="indicadores-radaresfrota-radarfrota.html#cb4-55" tabindex="-1"></a></span>
+<span id="cb4-56"><a href="indicadores-radaresfrota-radarfrota.html#cb4-56" tabindex="-1"></a>i5 <span class="ot">&lt;-</span> <span class="fu">right_join</span>(frota_2023_TOTAL_renomeada, aprov_repari5, <span class="at">by =</span> <span class="st">&quot;SiglaUf&quot;</span>)</span>
+<span id="cb4-57"><a href="indicadores-radaresfrota-radarfrota.html#cb4-57" tabindex="-1"></a>i5 <span class="ot">&lt;-</span> i5 <span class="sc">%&gt;%</span> </span>
+<span id="cb4-58"><a href="indicadores-radaresfrota-radarfrota.html#cb4-58" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">i5 =</span> (quantidade<span class="sc">/</span>frota)<span class="sc">*</span><span class="dv">10</span><span class="sc">^</span><span class="dv">4</span>)</span>
+<span id="cb4-59"><a href="indicadores-radaresfrota-radarfrota.html#cb4-59" tabindex="-1"></a></span>
+<span id="cb4-60"><a href="indicadores-radaresfrota-radarfrota.html#cb4-60" tabindex="-1"></a><span class="co"># i6 (aprovados+reparados)/frota com v = 50 km/h ####</span></span>
+<span id="cb4-61"><a href="indicadores-radaresfrota-radarfrota.html#cb4-61" tabindex="-1"></a>aprov_repari6 <span class="ot">&lt;-</span> radares <span class="sc">%&gt;%</span> </span>
+<span id="cb4-62"><a href="indicadores-radaresfrota-radarfrota.html#cb4-62" tabindex="-1"></a>  <span class="fu">filter</span>(UltimoResultado <span class="sc">!=</span> <span class="st">&quot;Reprovado&quot;</span>,</span>
+<span id="cb4-63"><a href="indicadores-radaresfrota-radarfrota.html#cb4-63" tabindex="-1"></a>         VelocidadeNominal <span class="sc">==</span> <span class="st">&quot;50&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-64"><a href="indicadores-radaresfrota-radarfrota.html#cb4-64" tabindex="-1"></a>  <span class="fu">group_by</span>(SiglaUf) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-65"><a href="indicadores-radaresfrota-radarfrota.html#cb4-65" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">quantidade =</span> <span class="fu">n</span>())</span>
+<span id="cb4-66"><a href="indicadores-radaresfrota-radarfrota.html#cb4-66" tabindex="-1"></a></span>
+<span id="cb4-67"><a href="indicadores-radaresfrota-radarfrota.html#cb4-67" tabindex="-1"></a></span>
+<span id="cb4-68"><a href="indicadores-radaresfrota-radarfrota.html#cb4-68" tabindex="-1"></a>i6 <span class="ot">&lt;-</span> <span class="fu">right_join</span>(frota_2023_TOTAL_renomeada, aprov_repari6, <span class="at">by =</span> <span class="st">&quot;SiglaUf&quot;</span>)</span>
+<span id="cb4-69"><a href="indicadores-radaresfrota-radarfrota.html#cb4-69" tabindex="-1"></a>i6 <span class="ot">&lt;-</span> i6 <span class="sc">%&gt;%</span> </span>
+<span id="cb4-70"><a href="indicadores-radaresfrota-radarfrota.html#cb4-70" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">i6 =</span> (quantidade<span class="sc">/</span>frota)<span class="sc">*</span><span class="dv">10</span><span class="sc">^</span><span class="dv">4</span>)</span>
+<span id="cb4-71"><a href="indicadores-radaresfrota-radarfrota.html#cb4-71" tabindex="-1"></a></span>
+<span id="cb4-72"><a href="indicadores-radaresfrota-radarfrota.html#cb4-72" tabindex="-1"></a><span class="co"># i7 (aprovados+reparados)/frota com v = 60 km/h ####</span></span>
+<span id="cb4-73"><a href="indicadores-radaresfrota-radarfrota.html#cb4-73" tabindex="-1"></a>aprov_repari7 <span class="ot">&lt;-</span> radares <span class="sc">%&gt;%</span> </span>
+<span id="cb4-74"><a href="indicadores-radaresfrota-radarfrota.html#cb4-74" tabindex="-1"></a>  <span class="fu">filter</span>(UltimoResultado <span class="sc">!=</span> <span class="st">&quot;Reprovado&quot;</span>,</span>
+<span id="cb4-75"><a href="indicadores-radaresfrota-radarfrota.html#cb4-75" tabindex="-1"></a>         VelocidadeNominal <span class="sc">==</span> <span class="st">&quot;60&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-76"><a href="indicadores-radaresfrota-radarfrota.html#cb4-76" tabindex="-1"></a>  <span class="fu">group_by</span>(SiglaUf) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-77"><a href="indicadores-radaresfrota-radarfrota.html#cb4-77" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">quantidade =</span> <span class="fu">n</span>())</span>
+<span id="cb4-78"><a href="indicadores-radaresfrota-radarfrota.html#cb4-78" tabindex="-1"></a></span>
+<span id="cb4-79"><a href="indicadores-radaresfrota-radarfrota.html#cb4-79" tabindex="-1"></a></span>
+<span id="cb4-80"><a href="indicadores-radaresfrota-radarfrota.html#cb4-80" tabindex="-1"></a>i7 <span class="ot">&lt;-</span> <span class="fu">right_join</span>(frota_2023_TOTAL_renomeada, aprov_repari7, <span class="at">by =</span> <span class="st">&quot;SiglaUf&quot;</span>)</span>
+<span id="cb4-81"><a href="indicadores-radaresfrota-radarfrota.html#cb4-81" tabindex="-1"></a>i7 <span class="ot">&lt;-</span> i7 <span class="sc">%&gt;%</span> </span>
+<span id="cb4-82"><a href="indicadores-radaresfrota-radarfrota.html#cb4-82" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">i7 =</span> (quantidade<span class="sc">/</span>frota)<span class="sc">*</span><span class="dv">10</span><span class="sc">^</span><span class="dv">4</span>)</span>
+<span id="cb4-83"><a href="indicadores-radaresfrota-radarfrota.html#cb4-83" tabindex="-1"></a></span>
+<span id="cb4-84"><a href="indicadores-radaresfrota-radarfrota.html#cb4-84" tabindex="-1"></a><span class="co"># i8 (aprovados+reparados)/frota com v = 70 km/h ####</span></span>
+<span id="cb4-85"><a href="indicadores-radaresfrota-radarfrota.html#cb4-85" tabindex="-1"></a>aprov_repari8 <span class="ot">&lt;-</span> radares <span class="sc">%&gt;%</span> </span>
+<span id="cb4-86"><a href="indicadores-radaresfrota-radarfrota.html#cb4-86" tabindex="-1"></a>  <span class="fu">filter</span>(UltimoResultado <span class="sc">!=</span> <span class="st">&quot;Reprovado&quot;</span>,</span>
+<span id="cb4-87"><a href="indicadores-radaresfrota-radarfrota.html#cb4-87" tabindex="-1"></a>         VelocidadeNominal <span class="sc">==</span> <span class="st">&quot;70&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-88"><a href="indicadores-radaresfrota-radarfrota.html#cb4-88" tabindex="-1"></a>  <span class="fu">group_by</span>(SiglaUf) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-89"><a href="indicadores-radaresfrota-radarfrota.html#cb4-89" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">quantidade =</span> <span class="fu">n</span>())</span>
+<span id="cb4-90"><a href="indicadores-radaresfrota-radarfrota.html#cb4-90" tabindex="-1"></a></span>
+<span id="cb4-91"><a href="indicadores-radaresfrota-radarfrota.html#cb4-91" tabindex="-1"></a></span>
+<span id="cb4-92"><a href="indicadores-radaresfrota-radarfrota.html#cb4-92" tabindex="-1"></a>i8 <span class="ot">&lt;-</span> <span class="fu">right_join</span>(frota_2023_TOTAL_renomeada, aprov_repari8, <span class="at">by =</span> <span class="st">&quot;SiglaUf&quot;</span>)</span>
+<span id="cb4-93"><a href="indicadores-radaresfrota-radarfrota.html#cb4-93" tabindex="-1"></a>i8 <span class="ot">&lt;-</span> i8 <span class="sc">%&gt;%</span> </span>
+<span id="cb4-94"><a href="indicadores-radaresfrota-radarfrota.html#cb4-94" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">i8 =</span> (quantidade<span class="sc">/</span>frota)<span class="sc">*</span><span class="dv">10</span><span class="sc">^</span><span class="dv">4</span>)</span>
+<span id="cb4-95"><a href="indicadores-radaresfrota-radarfrota.html#cb4-95" tabindex="-1"></a></span>
+<span id="cb4-96"><a href="indicadores-radaresfrota-radarfrota.html#cb4-96" tabindex="-1"></a><span class="co"># i9 (aprovados+reparados)/frota com v &gt;= 80 km/h ####</span></span>
+<span id="cb4-97"><a href="indicadores-radaresfrota-radarfrota.html#cb4-97" tabindex="-1"></a>aprov_repari9 <span class="ot">&lt;-</span> radares <span class="sc">%&gt;%</span> </span>
+<span id="cb4-98"><a href="indicadores-radaresfrota-radarfrota.html#cb4-98" tabindex="-1"></a>  <span class="fu">filter</span>(UltimoResultado <span class="sc">!=</span> <span class="st">&quot;Reprovado&quot;</span>,</span>
+<span id="cb4-99"><a href="indicadores-radaresfrota-radarfrota.html#cb4-99" tabindex="-1"></a>         VelocidadeNominal <span class="sc">&gt;=</span> <span class="dv">80</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-100"><a href="indicadores-radaresfrota-radarfrota.html#cb4-100" tabindex="-1"></a>  <span class="fu">group_by</span>(SiglaUf) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-101"><a href="indicadores-radaresfrota-radarfrota.html#cb4-101" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">quantidade =</span> <span class="fu">n</span>())</span>
+<span id="cb4-102"><a href="indicadores-radaresfrota-radarfrota.html#cb4-102" tabindex="-1"></a></span>
+<span id="cb4-103"><a href="indicadores-radaresfrota-radarfrota.html#cb4-103" tabindex="-1"></a></span>
+<span id="cb4-104"><a href="indicadores-radaresfrota-radarfrota.html#cb4-104" tabindex="-1"></a>i9 <span class="ot">&lt;-</span> <span class="fu">right_join</span>(frota_2023_TOTAL_renomeada, aprov_repari9, <span class="at">by =</span> <span class="st">&quot;SiglaUf&quot;</span>)</span>
+<span id="cb4-105"><a href="indicadores-radaresfrota-radarfrota.html#cb4-105" tabindex="-1"></a>i9 <span class="ot">&lt;-</span> i9 <span class="sc">%&gt;%</span> </span>
+<span id="cb4-106"><a href="indicadores-radaresfrota-radarfrota.html#cb4-106" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">i9 =</span> (quantidade<span class="sc">/</span>frota)<span class="sc">*</span><span class="dv">10</span><span class="sc">^</span><span class="dv">4</span>)</span></code></pre></div>
+</div>
+<div id="geração-do-data-frame" class="section level3 hasAnchor" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Geração do <em>Data Frame</em><a href="indicadores-radaresfrota-radarfrota.html#geração-do-data-frame" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Para fazer o <em>Data Frame</em> com todos os indicadores juntos, foi primeiramente feito um seleção de cada indicador, de forma a selecionar apenas as colunas que representavam a sigla da unidade da federação e o valor do indicador.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="indicadores-radaresfrota-radarfrota.html#cb5-1" tabindex="-1"></a>I1 <span class="ot">&lt;-</span> i1[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">7</span>)]</span>
+<span id="cb5-2"><a href="indicadores-radaresfrota-radarfrota.html#cb5-2" tabindex="-1"></a>I2 <span class="ot">&lt;-</span> i2[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">7</span>)]</span>
+<span id="cb5-3"><a href="indicadores-radaresfrota-radarfrota.html#cb5-3" tabindex="-1"></a>I3 <span class="ot">&lt;-</span> i3[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">7</span>)]</span>
+<span id="cb5-4"><a href="indicadores-radaresfrota-radarfrota.html#cb5-4" tabindex="-1"></a>I4 <span class="ot">&lt;-</span> i4[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>)]</span>
+<span id="cb5-5"><a href="indicadores-radaresfrota-radarfrota.html#cb5-5" tabindex="-1"></a>I5 <span class="ot">&lt;-</span> i5[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">7</span>)]</span>
+<span id="cb5-6"><a href="indicadores-radaresfrota-radarfrota.html#cb5-6" tabindex="-1"></a>I6 <span class="ot">&lt;-</span> i6[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">7</span>)]</span>
+<span id="cb5-7"><a href="indicadores-radaresfrota-radarfrota.html#cb5-7" tabindex="-1"></a>I7 <span class="ot">&lt;-</span> i7[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">7</span>)]</span>
+<span id="cb5-8"><a href="indicadores-radaresfrota-radarfrota.html#cb5-8" tabindex="-1"></a>I8 <span class="ot">&lt;-</span> i8[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">7</span>)]</span>
+<span id="cb5-9"><a href="indicadores-radaresfrota-radarfrota.html#cb5-9" tabindex="-1"></a>I9 <span class="ot">&lt;-</span> i9[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">7</span>)]</span></code></pre></div>
+<p>Com isso foi feito uma lista de todos esses indicadores para que então seja utilizado a função <code>reduce()</code> de forma a não haver nove colunas com as siglas das UF e para que cada tupla represente apenas uma UF e todos os seus respectivos indicadores. E feito uma alteração para que onde tivesse <code>NA</code>seja trocado pelo valor 0.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="indicadores-radaresfrota-radarfrota.html#cb6-1" tabindex="-1"></a>ind_rad <span class="ot">&lt;-</span> <span class="fu">list</span>(I1,I2,I3,I4,I5,I6,I7,I8,I9)</span>
+<span id="cb6-2"><a href="indicadores-radaresfrota-radarfrota.html#cb6-2" tabindex="-1"></a>Indicador_radares <span class="ot">&lt;-</span> <span class="fu">reduce</span>(ind_rad, full_join, <span class="at">by =</span> <span class="st">&quot;SiglaUf&quot;</span>)</span>
+<span id="cb6-3"><a href="indicadores-radaresfrota-radarfrota.html#cb6-3" tabindex="-1"></a>Indicador_radares[<span class="fu">is.na</span>(Indicador_radares)] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb6-4"><a href="indicadores-radaresfrota-radarfrota.html#cb6-4" tabindex="-1"></a>Indicador_radares</span></code></pre></div>
+<pre><code>## # A tibble: 27 × 10
+##    SiglaUf    i1    i2     i3    i4      i5     i6     i7      i8     i9
+##    &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;
+##  1 AC      0.428 0.371 0.0571 1     0.228   0.171  0      0.0285  0     
+##  2 AL      1.08  0     1.08   0.941 0.0274  0.740  0.292  0       0.0183
+##  3 AM      0.115 0     0.115  0.846 0.00885 0      0.0619 0       0.0442
+##  4 AP      1.44  1.32  0.124  0.943 0.247   0      1.20   0       0     
+##  5 BA      1.73  0.773 0.953  0.963 0.494   0.393  0.580  0.0879  0.141 
+##  6 CE      3.75  1.39  2.36   0.863 0.567   0.682  2.30   0       0.200 
+##  7 DF      7.50  1.58  5.92   0.965 1.55    1.16   3.62   0.202   0.922 
+##  8 ES      1.69  0.110 1.58   0.947 0.246   0.0509 1.23   0.00424 0.157 
+##  9 GO      4.60  2.00  2.60   0.911 1.11    0.681  1.97   0.108   0.679 
+## 10 MA      0.844 0.502 0.342  0.839 0.159   0.206  0.309  0       0.0188
+## # ℹ 17 more rows</code></pre>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="indicador-radarkm.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/01-indicador_radar_frota.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

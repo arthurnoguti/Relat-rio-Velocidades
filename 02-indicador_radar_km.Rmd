@@ -1,0 +1,50 @@
+# Indicador radar/Km  
+## Bibliotecas  
+Para o cálculo do indicador radar/Km foi utilizado apenas as seguintes bibliotecas:  
+```{r, message=FALSE}
+library(tidyverse)
+library(readxl)
+```  
+## Pré processamento  
+Neste indicador, as duas bases de dados foram importadas do computador, sendo uma base a dos radares (a mesma base utilizada no capítulo [2](#radar-frota)) e a outra a base de dados relativa a extensão das rodovias em cada unidade da federação. Abaixo é mostrado o *script* utilizado para importar ambas:  
+```{r}
+radares <- read_xlsx("/home/silvana/Downloads/INDICADORES_RADARES_VELOCIDADE_UF (indicador velocidade, infrações, mortalidade)).xlsx", sheet = 2)
+km <- read_xlsx('/home/silvana/Downloads/Rodovias Federais.xlsx')
+
+```  
+Posterior a isso é feito um filtro na base de radares, para selecionarmos apenas os radares do tipo fixo, que estão em rodovias, e que sejam "Aprovados" ou "Reparados".  
+```{r}
+radares <- radares %>% 
+  filter(TipoMedidor == "Fixo")
+radares_rodovia <- radares %>% 
+  filter(Tipo == "Rodovia" & 
+           UltimoResultado != "Reprovado")
+
+```  
+E então é utilizado a função `group_by()` seguida de um `summarise()` para que seja agrupado pela sigla da UF e somado a quantidade de radares.  
+```{r}
+radares_rodovia_quantidade <- radares_rodovia %>% 
+  group_by(SiglaUf) %>% 
+  summarise(Quantidade = n())
+```  
+## Cálculo do Indicador  
+
+Como o arquivo excel da extensão da vias já estava separado por UF e somado em cada, não foi necessário realizar esse passo para ele. Como os dois possuiam a mesma quantidade de linhas e uma coluna com valores iguais, foi feito um *full join* (união total da duas tabelas) utilizam tal coluna idẽntica como chave primária.  
+
+```{r}
+Indicador_radar_km <- full_join(km, radares_rodovia_quantidade, by = c("sg_uf" = "SiglaUf"))
+```  
+Esse *data frame* criado ainda não possui o valor do indicador, mas já possui todas as informações necessárias para realizar o cálculo do mesmo, então é utilizado a função `mutate()`para criar uma nova coluna com o valor do indicador para cada UF. E foi também renomeado as colunas para algo mais "interpretativo".   
+```{r}
+Indicador_radar_km <- Indicador_radar_km %>% 
+  mutate(indicador = (Quantidade/`soma vl_extensa`)*100) # Quantidade de radares a cada 100 KM de rodovia
+
+Indicador_radar_km <- rename(Indicador_radar_km, "Extensão_das_rodovias" = `soma vl_extensa`,
+       Quantidade_de_radares = Quantidade)
+```  
+Para este caso foi exportado em formato excel, para simplesmente copiar e colar os dados no documento *Word*, e então para isso foi devido a utilização de outra biblioteca.  
+```{r}
+library(writexl)
+writexl::write_xlsx(Indicador_radar_km, path = "/home/silvana/Downloads/Indicador_radar_km.xlsx")
+```
+

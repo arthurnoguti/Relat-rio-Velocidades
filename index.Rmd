@@ -1,0 +1,32 @@
+--- 
+title: "Relatório Velocidades"
+author: "Arthur Hideio Noguti"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
+description: |
+  This is a minimal example of using the bookdown package to write a book.
+  The HTML output format for this example is bookdown::gitbook,
+  set in the _output.yml file.
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+---
+
+# Introdução {#intro}
+<div align = "justify">
+Esse documento possui a finalidade de transmitir meus pensamentos sobre o que foi feito em R no relatório de velocidades e também serve como uma forma de treinamento para minhas habilidades em *markdown*
+</div>
+## Partes  
+Esse documento está dividido em 5 partes, sendo elas:  
+
+  * Indicadores radares/frota;  
+  * Indicador radares/Km;  
+  * Indicador mortalidade;  
+  * Quantidade de radares por limite de velocidde;  
+  * Correlações entre indicadores.  
+  
+## Observações  
+Algumas bases de dados serão importadas pelo [*GitHub* do ONSV](https://github.com/ONSV), entretando a base de dados que representa a quantidade de radares com suas características e da extensão das rodovias em cada unidade da federação serão importadas diretamente do computador, pois para a utilização dessas, você deverá baixar o arquivo excel e mudar o diretório do script quando tiver algumas função do tipo `read_csv(SEU DIRETÓRIO)`

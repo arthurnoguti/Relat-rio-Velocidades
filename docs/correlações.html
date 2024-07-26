@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 6 Correlações | Relatório Velocidades</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 6 Correlações | Relatório Velocidades" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 6 Correlações | Relatório Velocidades" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Arthur Hideio Noguti" />
+
+
+<meta name="date" content="2024-07-26" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="quantidade-de-radares-por-limite-de-velocidade.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introdução</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#partes"><i class="fa fa-check"></i><b>1.1</b> Partes</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#observações"><i class="fa fa-check"></i><b>1.2</b> Observações</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="radar-frota.html"><a href="radar-frota.html"><i class="fa fa-check"></i><b>2</b> Indicadores radares/frota</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="radar-frota.html"><a href="radar-frota.html#bibliotecas"><i class="fa fa-check"></i><b>2.1</b> Bibliotecas</a></li>
+<li class="chapter" data-level="2.2" data-path="radar-frota.html"><a href="radar-frota.html#pré-processamento"><i class="fa fa-check"></i><b>2.2</b> Pré processamento</a></li>
+<li class="chapter" data-level="2.3" data-path="radar-frota.html"><a href="radar-frota.html#cálculo-dos-indicadores-e-data-frame-final"><i class="fa fa-check"></i><b>2.3</b> Cálculo dos indicadores e <em>Data Frame</em> final</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="radar-frota.html"><a href="radar-frota.html#i1-ao-i9"><i class="fa fa-check"></i><b>2.3.1</b> I<sub>1</sub> ao I<sub>9</sub></a></li>
+<li class="chapter" data-level="2.3.2" data-path="radar-frota.html"><a href="radar-frota.html#geração-do-data-frame"><i class="fa fa-check"></i><b>2.3.2</b> Geração do <em>Data Frame</em></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="indicador-radarkm.html"><a href="indicador-radarkm.html"><i class="fa fa-check"></i><b>3</b> Indicador radar/Km</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="indicador-radarkm.html"><a href="indicador-radarkm.html#bibliotecas-1"><i class="fa fa-check"></i><b>3.1</b> Bibliotecas</a></li>
+<li class="chapter" data-level="3.2" data-path="indicador-radarkm.html"><a href="indicador-radarkm.html#pré-processamento-1"><i class="fa fa-check"></i><b>3.2</b> Pré processamento</a></li>
+<li class="chapter" data-level="3.3" data-path="indicador-radarkm.html"><a href="indicador-radarkm.html#cálculo-do-indicador"><i class="fa fa-check"></i><b>3.3</b> Cálculo do Indicador</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="indicador-mortalidade.html"><a href="indicador-mortalidade.html"><i class="fa fa-check"></i><b>4</b> Indicador Mortalidade</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="indicador-mortalidade.html"><a href="indicador-mortalidade.html#bibliotecas-2"><i class="fa fa-check"></i><b>4.1</b> Bibliotecas</a></li>
+<li class="chapter" data-level="4.2" data-path="indicador-mortalidade.html"><a href="indicador-mortalidade.html#pré-processamento-2"><i class="fa fa-check"></i><b>4.2</b> Pré processamento</a></li>
+<li class="chapter" data-level="4.3" data-path="indicador-mortalidade.html"><a href="indicador-mortalidade.html#cálculo-do-indicador-1"><i class="fa fa-check"></i><b>4.3</b> Cálculo do Indicador</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="quantidade-de-radares-por-limite-de-velocidade.html"><a href="quantidade-de-radares-por-limite-de-velocidade.html"><i class="fa fa-check"></i><b>5</b> Quantidade de radares por limite de velocidade</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="quantidade-de-radares-por-limite-de-velocidade.html"><a href="quantidade-de-radares-por-limite-de-velocidade.html#bibliotecas-3"><i class="fa fa-check"></i><b>5.1</b> Bibliotecas</a></li>
+<li class="chapter" data-level="5.2" data-path="quantidade-de-radares-por-limite-de-velocidade.html"><a href="quantidade-de-radares-por-limite-de-velocidade.html#construção-do-gráfico"><i class="fa fa-check"></i><b>5.2</b> Construção do gráfico</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="correlações.html"><a href="correlações.html"><i class="fa fa-check"></i><b>6</b> Correlações</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="correlações.html"><a href="correlações.html#bibliotecas-4"><i class="fa fa-check"></i><b>6.1</b> Bibliotecas</a></li>
+<li class="chapter" data-level="6.2" data-path="correlações.html"><a href="correlações.html#importando-os-dados-e-manipulando-estruturas"><i class="fa fa-check"></i><b>6.2</b> Importando os dados e manipulando estruturas</a></li>
+<li class="chapter" data-level="6.3" data-path="correlações.html"><a href="correlações.html#gráficos"><i class="fa fa-check"></i><b>6.3</b> Gráficos</a></li>
+<li class="chapter" data-level="6.4" data-path="correlações.html"><a href="correlações.html#correlograma-entre-indicadores-radarfrota-e-indicador-infrações"><i class="fa fa-check"></i><b>6.4</b> Correlograma entre indicadores radar/frota e indicador infrações</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Relatório Velocidades</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="correlações" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Capítulo 6</span> Correlações<a href="correlações.html#correlações" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="bibliotecas-4" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Bibliotecas<a href="correlações.html#bibliotecas-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Foram utilizadas diversas bibliotecas nessa seção, sendo elas:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="correlações.html#cb23-1" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&#39;readxl&#39;</span>) <span class="co">#ler arquivo xlsx excel</span></span>
+<span id="cb23-2"><a href="correlações.html#cb23-2" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&#39;tidyverse&#39;</span>) <span class="co"># plotar gráficos e utilizar o pipe</span></span>
+<span id="cb23-3"><a href="correlações.html#cb23-3" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&#39;patchwork&#39;</span>) <span class="co"># plotar gráficos juntos</span></span>
+<span id="cb23-4"><a href="correlações.html#cb23-4" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&#39;onsvplot&#39;</span>) <span class="co"># usar o tema de gráfico do onsv</span></span>
+<span id="cb23-5"><a href="correlações.html#cb23-5" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&#39;corrplot&#39;</span>) <span class="co"># fazer o correlograma</span></span>
+<span id="cb23-6"><a href="correlações.html#cb23-6" tabindex="-1"></a><span class="co"># devtools::install_github(&quot;pabsantos/roadtrafficdeaths&quot;)</span></span>
+<span id="cb23-7"><a href="correlações.html#cb23-7" tabindex="-1"></a><span class="co"># devtools::install_github(&quot;jotasaraiva/fleetbr&quot;)</span></span>
+<span id="cb23-8"><a href="correlações.html#cb23-8" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&#39;roadtrafficdeaths&#39;</span>) <span class="co"># dados sobre mortalidade no trânsito</span></span>
+<span id="cb23-9"><a href="correlações.html#cb23-9" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&#39;fleetbr&#39;</span>) <span class="co"># dados sobre a frota de veículos</span></span></code></pre></div>
+</div>
+<div id="importando-os-dados-e-manipulando-estruturas" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Importando os dados e manipulando estruturas<a href="correlações.html#importando-os-dados-e-manipulando-estruturas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Foi importado os dados relativos as infrações e retirado a linha “BR”, além de renomear a coluna relativo ao indicador de infrações. Com isso foi feito uma união com o <em>Data Frame</em> criado no capítulo <a href="radar-frota.html#radar-frota">2</a> e trocado onde havia <code>NA</code> por 0.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="correlações.html#cb24-1" tabindex="-1"></a>infrações <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">&quot;/home/silvana/Downloads/INDICADORES_RADARES_VELOCIDADE_UF (indicador velocidade, infrações, mortalidade)).xlsx&quot;</span>, <span class="at">sheet =</span> <span class="dv">7</span>)</span>
+<span id="cb24-2"><a href="correlações.html#cb24-2" tabindex="-1"></a>infrações <span class="ot">&lt;-</span> infrações[<span class="sc">-</span><span class="dv">7</span>,] <span class="co">#excluindo a linha &quot;BR&quot;</span></span>
+<span id="cb24-3"><a href="correlações.html#cb24-3" tabindex="-1"></a>infrações <span class="ot">&lt;-</span> <span class="fu">rename</span>(infrações, infrações <span class="ot">=</span> <span class="st">`</span><span class="at">infrações/10000 veículos</span><span class="st">`</span>)</span>
+<span id="cb24-4"><a href="correlações.html#cb24-4" tabindex="-1"></a></span>
+<span id="cb24-5"><a href="correlações.html#cb24-5" tabindex="-1"></a>Indicador_radares <span class="ot">&lt;-</span> <span class="fu">rename</span>(Indicador_radares, <span class="at">UF =</span> SiglaUf) <span class="co">#Esse data frame vem do script &quot;Indicadores radares_frota.R&quot;</span></span>
+<span id="cb24-6"><a href="correlações.html#cb24-6" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="correlações.html#cb24-7" tabindex="-1"></a>rad_inf <span class="ot">&lt;-</span> <span class="fu">full_join</span>(infrações[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>)], Indicador_radares, <span class="at">by =</span> <span class="st">&quot;UF&quot;</span>)</span>
+<span id="cb24-8"><a href="correlações.html#cb24-8" tabindex="-1"></a></span>
+<span id="cb24-9"><a href="correlações.html#cb24-9" tabindex="-1"></a>rad_inf <span class="ot">&lt;-</span> rad_inf <span class="sc">%&gt;%</span> </span>
+<span id="cb24-10"><a href="correlações.html#cb24-10" tabindex="-1"></a>  <span class="fu">mutate_all</span>(replace_na, <span class="dv">0</span>)</span></code></pre></div>
+</div>
+<div id="gráficos" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Gráficos<a href="correlações.html#gráficos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Foi feito então um gráfico geral para avaliar a correlação visual entre os indicadores radar/frota e o indicador de infrações.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="correlações.html#cb25-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> rad_inf)<span class="sc">+</span></span>
+<span id="cb25-2"><a href="correlações.html#cb25-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span> infrações , <span class="at">y =</span> i1))<span class="sc">+</span></span>
+<span id="cb25-3"><a href="correlações.html#cb25-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span> infrações , <span class="at">y =</span> i1), <span class="at">se =</span> <span class="cn">FALSE</span>)<span class="sc">+</span><span class="fu">theme_onsv</span>()<span class="sc">+</span></span>
+<span id="cb25-4"><a href="correlações.html#cb25-4" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> rad_inf)<span class="sc">+</span></span>
+<span id="cb25-5"><a href="correlações.html#cb25-5" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span> infrações , <span class="at">y =</span> i2))<span class="sc">+</span></span>
+<span id="cb25-6"><a href="correlações.html#cb25-6" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span> infrações, <span class="at">y =</span> i2), <span class="at">se =</span> <span class="cn">FALSE</span>)<span class="sc">+</span><span class="fu">theme_onsv</span>()<span class="sc">+</span></span>
+<span id="cb25-7"><a href="correlações.html#cb25-7" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> rad_inf)<span class="sc">+</span></span>
+<span id="cb25-8"><a href="correlações.html#cb25-8" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span> infrações, <span class="at">y =</span> i3))<span class="sc">+</span></span>
+<span id="cb25-9"><a href="correlações.html#cb25-9" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span> infrações, <span class="at">y =</span> i3), <span class="at">se =</span> <span class="cn">FALSE</span>)<span class="sc">+</span><span class="fu">theme_onsv</span>()<span class="sc">+</span></span>
+<span id="cb25-10"><a href="correlações.html#cb25-10" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> rad_inf)<span class="sc">+</span></span>
+<span id="cb25-11"><a href="correlações.html#cb25-11" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span> infrações , <span class="at">y =</span> i4))<span class="sc">+</span></span>
+<span id="cb25-12"><a href="correlações.html#cb25-12" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span> infrações, <span class="at">y =</span> i4), <span class="at">se =</span> <span class="cn">FALSE</span>)<span class="sc">+</span><span class="fu">theme_onsv</span>()<span class="sc">+</span></span>
+<span id="cb25-13"><a href="correlações.html#cb25-13" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> rad_inf)<span class="sc">+</span></span>
+<span id="cb25-14"><a href="correlações.html#cb25-14" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span> infrações , <span class="at">y =</span> i5))<span class="sc">+</span></span>
+<span id="cb25-15"><a href="correlações.html#cb25-15" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span> infrações , <span class="at">y =</span> i5), <span class="at">se =</span> <span class="cn">FALSE</span>)<span class="sc">+</span><span class="fu">theme_onsv</span>()<span class="sc">+</span></span>
+<span id="cb25-16"><a href="correlações.html#cb25-16" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> rad_inf)<span class="sc">+</span></span>
+<span id="cb25-17"><a href="correlações.html#cb25-17" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span> infrações, <span class="at">y =</span> i6))<span class="sc">+</span></span>
+<span id="cb25-18"><a href="correlações.html#cb25-18" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span> infrações, <span class="at">y =</span> i6), <span class="at">se =</span> <span class="cn">FALSE</span>)<span class="sc">+</span><span class="fu">theme_onsv</span>()<span class="sc">+</span></span>
+<span id="cb25-19"><a href="correlações.html#cb25-19" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> rad_inf)<span class="sc">+</span></span>
+<span id="cb25-20"><a href="correlações.html#cb25-20" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span> infrações , <span class="at">y =</span> i7))<span class="sc">+</span></span>
+<span id="cb25-21"><a href="correlações.html#cb25-21" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span> infrações , <span class="at">y =</span> i7), <span class="at">se =</span> <span class="cn">FALSE</span>)<span class="sc">+</span><span class="fu">theme_onsv</span>()<span class="sc">+</span></span>
+<span id="cb25-22"><a href="correlações.html#cb25-22" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> rad_inf)<span class="sc">+</span></span>
+<span id="cb25-23"><a href="correlações.html#cb25-23" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span> infrações, <span class="at">y =</span> i8))<span class="sc">+</span></span>
+<span id="cb25-24"><a href="correlações.html#cb25-24" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span> infrações, <span class="at">y =</span> i8), <span class="at">se =</span> <span class="cn">FALSE</span>)<span class="sc">+</span><span class="fu">theme_onsv</span>()<span class="sc">+</span></span>
+<span id="cb25-25"><a href="correlações.html#cb25-25" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> rad_inf)<span class="sc">+</span></span>
+<span id="cb25-26"><a href="correlações.html#cb25-26" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span> infrações , <span class="at">y =</span> i9))<span class="sc">+</span></span>
+<span id="cb25-27"><a href="correlações.html#cb25-27" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span> infrações, <span class="at">y =</span> i9), <span class="at">se =</span> <span class="cn">FALSE</span>)<span class="sc">+</span><span class="fu">theme_onsv</span>()</span></code></pre></div>
+<p><img src="RelatorioVelocidades_files/figure-html/unnamed-chunk-23-1.png" width="672" />
+Mas por fim foi adicionado no relatório apenas o gráfico de I<sub>1</sub> <em>vs</em> infrações.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="correlações.html#cb26-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> rad_inf)<span class="sc">+</span></span>
+<span id="cb26-2"><a href="correlações.html#cb26-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span> infrações , <span class="at">y =</span> i1))<span class="sc">+</span></span>
+<span id="cb26-3"><a href="correlações.html#cb26-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span> infrações , <span class="at">y =</span> i1), <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">method =</span> <span class="st">&quot;lm&quot;</span>)<span class="sc">+</span></span>
+<span id="cb26-4"><a href="correlações.html#cb26-4" tabindex="-1"></a>  <span class="fu">theme_onsv</span>()<span class="sc">+</span></span>
+<span id="cb26-5"><a href="correlações.html#cb26-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Quantidade de infrações a cada 10 mil veículos&quot;</span>, <span class="at">y=</span><span class="st">&quot;I1 - Quantidade geral de radares a cada 10 mil veículos&quot;</span>)<span class="sc">+</span></span>
+<span id="cb26-6"><a href="correlações.html#cb26-6" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span><span class="dv">18</span>),<span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span><span class="dv">10</span>))</span></code></pre></div>
+<p><img src="RelatorioVelocidades_files/figure-html/unnamed-chunk-24-1.png" width="672" />
+Nesse arquivo <em>bookdown</em> eu tive que diminuir o tamanho da legenda do eixo “y” para 10 pois não estava “cabendo” no gráfico, mas no relatório foi utilizado a fonte 18 para o eixo “y” (o mesmo tamanho da fonte do eixo “x”)</p>
+</div>
+<div id="correlograma-entre-indicadores-radarfrota-e-indicador-infrações" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Correlograma entre indicadores radar/frota e indicador infrações<a href="correlações.html#correlograma-entre-indicadores-radarfrota-e-indicador-infrações" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Foi feito um <code>cor.test()</code> em todos os casos para verificar se são estatísticamente correlacionados:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="correlações.html#cb27-1" tabindex="-1"></a><span class="fu">cor.test</span>(rad_inf<span class="sc">$</span>infrações, rad_inf<span class="sc">$</span>i1, <span class="at">method =</span> <span class="st">&#39;spearman&#39;</span>)</span>
+<span id="cb27-2"><a href="correlações.html#cb27-2" tabindex="-1"></a><span class="fu">cor.test</span>(rad_inf<span class="sc">$</span>infrações, rad_inf<span class="sc">$</span>i2, <span class="at">method =</span> <span class="st">&#39;spearman&#39;</span>)</span>
+<span id="cb27-3"><a href="correlações.html#cb27-3" tabindex="-1"></a><span class="fu">cor.test</span>(rad_inf<span class="sc">$</span>infrações, rad_inf<span class="sc">$</span>i3, <span class="at">method =</span> <span class="st">&#39;spearman&#39;</span>)</span>
+<span id="cb27-4"><a href="correlações.html#cb27-4" tabindex="-1"></a><span class="fu">cor.test</span>(rad_inf<span class="sc">$</span>infrações, rad_inf<span class="sc">$</span>i4, <span class="at">method =</span> <span class="st">&#39;spearman&#39;</span>)</span>
+<span id="cb27-5"><a href="correlações.html#cb27-5" tabindex="-1"></a><span class="fu">cor.test</span>(rad_inf<span class="sc">$</span>infrações, rad_inf<span class="sc">$</span>i5, <span class="at">method =</span> <span class="st">&#39;spearman&#39;</span>)</span>
+<span id="cb27-6"><a href="correlações.html#cb27-6" tabindex="-1"></a><span class="fu">cor.test</span>(rad_inf<span class="sc">$</span>infrações, rad_inf<span class="sc">$</span>i6, <span class="at">method =</span> <span class="st">&#39;spearman&#39;</span>)</span>
+<span id="cb27-7"><a href="correlações.html#cb27-7" tabindex="-1"></a><span class="fu">cor.test</span>(rad_inf<span class="sc">$</span>infrações, rad_inf<span class="sc">$</span>i7, <span class="at">method =</span> <span class="st">&#39;spearman&#39;</span>)</span>
+<span id="cb27-8"><a href="correlações.html#cb27-8" tabindex="-1"></a><span class="fu">cor.test</span>(rad_inf<span class="sc">$</span>infrações, rad_inf<span class="sc">$</span>i8, <span class="at">method =</span> <span class="st">&#39;spearman&#39;</span>)</span>
+<span id="cb27-9"><a href="correlações.html#cb27-9" tabindex="-1"></a><span class="fu">cor.test</span>(rad_inf<span class="sc">$</span>infrações, rad_inf<span class="sc">$</span>i9, <span class="at">method =</span> <span class="st">&#39;spearman&#39;</span>)</span></code></pre></div>
+<p>Com isso ficou nítido que o I<sub>4</sub> não possui correlação algumas com as infrações e o I<sub>6</sub>também poderia ser excluido se considerassemos um p-valor&lt;0.05.<br />
+Após esse teste, foi feito o gráfico de correlação geral:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="correlações.html#cb28-1" tabindex="-1"></a>graf_corr <span class="ot">&lt;-</span> <span class="fu">cor</span>(rad_inf[,<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">6</span>)], <span class="at">method =</span> <span class="st">&quot;spearman&quot;</span>)</span>
+<span id="cb28-2"><a href="correlações.html#cb28-2" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="correlações.html#cb28-3" tabindex="-1"></a><span class="fu">corrplot</span>(graf_corr, <span class="at">type =</span> <span class="st">&quot;lower&quot;</span>, <span class="at">method =</span> <span class="st">&quot;number&quot;</span>) </span></code></pre></div>
+<p><img src="RelatorioVelocidades_files/figure-html/unnamed-chunk-26-1.png" width="672" />
+## Correlação entre infrações e mortalidade<br />
+Para esse correlação foi feito um ajuste na base de dados do DataSus e teve de ser criado um <code>tibble</code>(um <em>Data Frame</em> evoluído) sobre as regiões das unidades da federação, classificando cada unidade da federação na sua respectiva região. Fazendo então a união de três bases, a base de mortalidade, a base de infrações e a base das regiões.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="correlações.html#cb29-1" tabindex="-1"></a>rtdeaths_2022<span class="ot">&lt;-</span> <span class="fu">filter</span>(rtdeaths,rtdeaths<span class="sc">$</span>ano_ocorrencia <span class="sc">==</span> <span class="dv">2022</span>)</span>
+<span id="cb29-2"><a href="correlações.html#cb29-2" tabindex="-1"></a>rtdeaths_2022 <span class="ot">&lt;-</span> rtdeaths_2022 <span class="sc">%&gt;%</span></span>
+<span id="cb29-3"><a href="correlações.html#cb29-3" tabindex="-1"></a>  <span class="fu">group_by</span>(rtdeaths_2022<span class="sc">$</span>nome_uf_ocor) <span class="sc">%&gt;%</span></span>
+<span id="cb29-4"><a href="correlações.html#cb29-4" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb29-5"><a href="correlações.html#cb29-5" tabindex="-1"></a>    <span class="at">quantidade =</span> <span class="fu">n</span>()</span>
+<span id="cb29-6"><a href="correlações.html#cb29-6" tabindex="-1"></a>  )</span>
+<span id="cb29-7"><a href="correlações.html#cb29-7" tabindex="-1"></a>rtdeaths_2022 <span class="ot">&lt;-</span> rtdeaths_2022[<span class="sc">-</span><span class="dv">28</span>,]</span>
+<span id="cb29-8"><a href="correlações.html#cb29-8" tabindex="-1"></a>rtdeaths_2022 <span class="ot">&lt;-</span> <span class="fu">mutate</span>(rtdeaths_2022,  <span class="at">UF =</span> <span class="fu">c</span>(<span class="st">&quot;AC&quot;</span>, <span class="st">&quot;AL&quot;</span>, <span class="st">&quot;AP&quot;</span>, <span class="st">&quot;AM&quot;</span>, <span class="st">&quot;BA&quot;</span>, <span class="st">&quot;CE&quot;</span>, <span class="st">&quot;DF&quot;</span>, <span class="st">&quot;ES&quot;</span>, <span class="st">&quot;GO&quot;</span>, <span class="st">&quot;MA&quot;</span>, <span class="st">&quot;MT&quot;</span>, </span>
+<span id="cb29-9"><a href="correlações.html#cb29-9" tabindex="-1"></a>                                               <span class="st">&quot;MS&quot;</span>, <span class="st">&quot;MG&quot;</span>, <span class="st">&quot;PR&quot;</span>, <span class="st">&quot;PB&quot;</span>, </span>
+<span id="cb29-10"><a href="correlações.html#cb29-10" tabindex="-1"></a>                                               <span class="st">&quot;PA&quot;</span>, <span class="st">&quot;PE&quot;</span>, <span class="st">&quot;PI&quot;</span>, <span class="st">&quot;RN&quot;</span>, <span class="st">&quot;RS&quot;</span>, <span class="st">&quot;RJ&quot;</span>, <span class="st">&quot;RO&quot;</span>, <span class="st">&quot;RR&quot;</span>, <span class="st">&quot;SC&quot;</span>, <span class="st">&quot;SE&quot;</span>, <span class="st">&quot;SP&quot;</span>, <span class="st">&quot;TO&quot;</span>))</span>
+<span id="cb29-11"><a href="correlações.html#cb29-11" tabindex="-1"></a>rtdeaths_2022 <span class="ot">&lt;-</span> <span class="fu">rename</span>(rtdeaths_2022, <span class="at">Estado =</span> <span class="st">`</span><span class="at">rtdeaths_2022$nome_uf_ocor</span><span class="st">`</span>)</span>
+<span id="cb29-12"><a href="correlações.html#cb29-12" tabindex="-1"></a></span>
+<span id="cb29-13"><a href="correlações.html#cb29-13" tabindex="-1"></a>fleet_2022 <span class="ot">&lt;-</span> <span class="fu">filter</span>(fleetbr, mes <span class="sc">==</span> <span class="dv">12</span>, ano <span class="sc">==</span> <span class="dv">2022</span>, modal <span class="sc">==</span> <span class="st">&quot;TOTAL&quot;</span>)</span>
+<span id="cb29-14"><a href="correlações.html#cb29-14" tabindex="-1"></a></span>
+<span id="cb29-15"><a href="correlações.html#cb29-15" tabindex="-1"></a>rtdeaths_fleet <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(rtdeaths_2022, fleet_2022, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;UF&quot;</span> <span class="ot">=</span> <span class="st">&quot;uf&quot;</span>))</span>
+<span id="cb29-16"><a href="correlações.html#cb29-16" tabindex="-1"></a>rtdeaths_fleet <span class="ot">&lt;-</span> <span class="fu">mutate</span>(rtdeaths_fleet, <span class="at">A_cada_10_mil =</span> (quantidade<span class="sc">*</span><span class="dv">10</span><span class="sc">^</span><span class="dv">4</span>)<span class="sc">/</span>frota)</span>
+<span id="cb29-17"><a href="correlações.html#cb29-17" tabindex="-1"></a></span>
+<span id="cb29-18"><a href="correlações.html#cb29-18" tabindex="-1"></a>rad_inf2 <span class="ot">&lt;-</span> <span class="fu">subset</span>(rad_inf, <span class="at">select =</span> infrações)</span>
+<span id="cb29-19"><a href="correlações.html#cb29-19" tabindex="-1"></a><span class="fu">cor.test</span>(rad_inf2<span class="sc">$</span>infrações,rtdeaths_fleet<span class="sc">$</span>A_cada_10_mil, <span class="at">method =</span> <span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+##  Spearman&#39;s rank correlation rho
+## 
+## data:  rad_inf2$infrações and rtdeaths_fleet$A_cada_10_mil
+## S = 3108, p-value = 0.7992
+## alternative hypothesis: true rho is not equal to 0
+## sample estimates:
+##        rho 
+## 0.05128205</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="correlações.html#cb31-1" tabindex="-1"></a><span class="fu">cor.test</span>(rad_inf<span class="sc">$</span>i1,rtdeaths_fleet<span class="sc">$</span>A_cada_10_mil, <span class="at">method =</span> <span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+##  Spearman&#39;s rank correlation rho
+## 
+## data:  rad_inf$i1 and rtdeaths_fleet$A_cada_10_mil
+## S = 3796, p-value = 0.4274
+## alternative hypothesis: true rho is not equal to 0
+## sample estimates:
+##        rho 
+## -0.1587302</code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="correlações.html#cb33-1" tabindex="-1"></a>mort_ind <span class="ot">&lt;-</span> rtdeaths_fleet <span class="sc">%&gt;%</span> </span>
+<span id="cb33-2"><a href="correlações.html#cb33-2" tabindex="-1"></a>  <span class="fu">inner_join</span>(rad_inf, <span class="at">by =</span> <span class="st">&quot;UF&quot;</span>)</span>
+<span id="cb33-3"><a href="correlações.html#cb33-3" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="correlações.html#cb33-4" tabindex="-1"></a>regioes <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">UF =</span> <span class="fu">c</span>(<span class="st">&quot;RS&quot;</span>,<span class="st">&quot;SC&quot;</span>,<span class="st">&quot;PR&quot;</span>,<span class="st">&quot;SP&quot;</span>,<span class="st">&quot;MG&quot;</span>,<span class="st">&quot;RJ&quot;</span>,<span class="st">&quot;ES&quot;</span>,<span class="st">&quot;MS&quot;</span>,<span class="st">&quot;MT&quot;</span>,<span class="st">&quot;GO&quot;</span>,<span class="st">&quot;DF&quot;</span>,<span class="st">&quot;BA&quot;</span>,<span class="st">&quot;SE&quot;</span>,<span class="st">&quot;AL&quot;</span>,<span class="st">&quot;PE&quot;</span>,<span class="st">&quot;PB&quot;</span>,<span class="st">&quot;RN&quot;</span>,<span class="st">&quot;CE&quot;</span>,<span class="st">&quot;PI&quot;</span>,<span class="st">&quot;MA&quot;</span>,</span>
+<span id="cb33-5"><a href="correlações.html#cb33-5" tabindex="-1"></a>                            <span class="st">&quot;TO&quot;</span>,<span class="st">&quot;PA&quot;</span>,<span class="st">&quot;AP&quot;</span>,<span class="st">&quot;RR&quot;</span>,<span class="st">&quot;RO&quot;</span>,<span class="st">&quot;AM&quot;</span>,<span class="st">&quot;AC&quot;</span>),</span>
+<span id="cb33-6"><a href="correlações.html#cb33-6" tabindex="-1"></a>                  <span class="at">Regiao =</span> <span class="fu">c</span>(<span class="st">&quot;Sul&quot;</span>,<span class="st">&quot;Sul&quot;</span>,<span class="st">&quot;Sul&quot;</span>,<span class="st">&quot;Sudeste&quot;</span>,<span class="st">&quot;Sudeste&quot;</span>,<span class="st">&quot;Sudeste&quot;</span>,<span class="st">&quot;Sudeste&quot;</span>,<span class="st">&quot;Centro Oeste&quot;</span>,<span class="st">&quot;Centro Oeste&quot;</span>,</span>
+<span id="cb33-7"><a href="correlações.html#cb33-7" tabindex="-1"></a>                             <span class="st">&quot;Centro Oeste&quot;</span>,<span class="st">&quot;Centro Oeste&quot;</span>,<span class="st">&quot;Nordeste&quot;</span>,<span class="st">&quot;Nordeste&quot;</span>,<span class="st">&quot;Nordeste&quot;</span>,<span class="st">&quot;Nordeste&quot;</span>,<span class="st">&quot;Nordeste&quot;</span>,<span class="st">&quot;Nordeste&quot;</span>,</span>
+<span id="cb33-8"><a href="correlações.html#cb33-8" tabindex="-1"></a>                             <span class="st">&quot;Nordeste&quot;</span>,<span class="st">&quot;Nordeste&quot;</span>,<span class="st">&quot;Nordeste&quot;</span>,<span class="st">&quot;Norte&quot;</span>,<span class="st">&quot;Norte&quot;</span>,<span class="st">&quot;Norte&quot;</span>,<span class="st">&quot;Norte&quot;</span>,<span class="st">&quot;Norte&quot;</span>,<span class="st">&quot;Norte&quot;</span>,<span class="st">&quot;Norte&quot;</span>))</span>
+<span id="cb33-9"><a href="correlações.html#cb33-9" tabindex="-1"></a>mort_ind <span class="ot">&lt;-</span> mort_ind <span class="sc">%&gt;%</span></span>
+<span id="cb33-10"><a href="correlações.html#cb33-10" tabindex="-1"></a>  <span class="fu">inner_join</span>(regioes, <span class="at">by =</span> <span class="st">&quot;UF&quot;</span>)</span></code></pre></div>
+<p>Note também que foi feito um teste de correlação, e ele já indicou que não há tal correlação, mas mesmo assim podemos tirar <em>insights</em> visuais do gráfico feito abaixo:</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="correlações.html#cb34-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mort_ind)<span class="sc">+</span></span>
+<span id="cb34-2"><a href="correlações.html#cb34-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> i1, <span class="at">y =</span> A_cada_10_mil, <span class="at">color =</span> Regiao))<span class="sc">+</span></span>
+<span id="cb34-3"><a href="correlações.html#cb34-3" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">x =</span> i1, <span class="at">y =</span> A_cada_10_mil, <span class="at">label =</span> UF), <span class="at">size =</span> <span class="fl">3.5</span>, <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.3</span>)<span class="sc">+</span></span>
+<span id="cb34-4"><a href="correlações.html#cb34-4" tabindex="-1"></a>  <span class="fu">theme_onsv</span>()<span class="sc">+</span></span>
+<span id="cb34-5"><a href="correlações.html#cb34-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;I1 - Quantidade de radares a cada 10 mil veículos&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Mortes a cada 10 mil veículos&quot;</span>)<span class="sc">+</span></span>
+<span id="cb34-6"><a href="correlações.html#cb34-6" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span><span class="dv">18</span>),</span>
+<span id="cb34-7"><a href="correlações.html#cb34-7" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span><span class="dv">18</span>), </span>
+<span id="cb34-8"><a href="correlações.html#cb34-8" tabindex="-1"></a>        <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span><span class="dv">12</span>))</span></code></pre></div>
+<p><img src="RelatorioVelocidades_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+
+
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="quantidade-de-radares-por-limite-de-velocidade.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/05-Correlações.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["RelatorioVelocidades.pdf", "RelatorioVelocidades.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

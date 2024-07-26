@@ -60,6 +60,7 @@ ggplot(data = rad_inf)+
   geom_smooth(mapping = aes(x= infrações, y = i9), se = FALSE)+theme_onsv()
 
 ```  
+<br>
 Mas por fim foi adicionado no relatório apenas o gráfico de I~1~ *vs* infrações.
 ```{r, message=FALSE}
 ggplot(data = rad_inf)+
@@ -69,6 +70,7 @@ ggplot(data = rad_inf)+
   labs(x = "Quantidade de infrações a cada 10 mil veículos", y="I1 - Quantidade geral de radares a cada 10 mil veículos")+
   theme(axis.title.x = element_text(size =18),axis.title.y = element_text(size =10))
 ```  
+<br>
 Nesse arquivo *bookdown* eu tive que diminuir o tamanho da legenda do eixo "y" para 10 pois não estava "cabendo" no gráfico, mas no relatório foi utilizado a fonte 18 para o eixo "y" (o mesmo tamanho da fonte do eixo "x")  
 
 ## Correlograma entre indicadores radar/frota e indicador infrações  
@@ -93,6 +95,7 @@ graf_corr <- cor(rad_inf[,c(-1,-6)], method = "spearman")
 corrplot(graf_corr, type = "lower", method = "number") 
 
 ```  
+<br>
 ## Correlação entre infrações e mortalidade  
 Para esse correlação foi feito um ajuste na base de dados do DataSus e teve de ser criado um `tibble`(um *Data Frame* evoluído) sobre as regiões das unidades da federação, classificando cada unidade da federação na sua respectiva região. Fazendo então a união de três bases, a base de mortalidade, a base de infrações e a base das regiões.  
 ```{r}

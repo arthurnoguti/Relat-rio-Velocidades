@@ -265,6 +265,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb25-26"><a href="correlações.html#cb25-26" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span> infrações , <span class="at">y =</span> i9))<span class="sc">+</span></span>
 <span id="cb25-27"><a href="correlações.html#cb25-27" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span> infrações, <span class="at">y =</span> i9), <span class="at">se =</span> <span class="cn">FALSE</span>)<span class="sc">+</span><span class="fu">theme_onsv</span>()</span></code></pre></div>
 <p><img src="RelatorioVelocidades_files/figure-html/unnamed-chunk-23-1.png" width="672" />
+<br>
 Mas por fim foi adicionado no relatório apenas o gráfico de I<sub>1</sub> <em>vs</em> infrações.</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="correlações.html#cb26-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> rad_inf)<span class="sc">+</span></span>
 <span id="cb26-2"><a href="correlações.html#cb26-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span> infrações , <span class="at">y =</span> i1))<span class="sc">+</span></span>
@@ -273,6 +274,7 @@ Mas por fim foi adicionado no relatório apenas o gráfico de I<sub>1</sub> <em>
 <span id="cb26-5"><a href="correlações.html#cb26-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Quantidade de infrações a cada 10 mil veículos&quot;</span>, <span class="at">y=</span><span class="st">&quot;I1 - Quantidade geral de radares a cada 10 mil veículos&quot;</span>)<span class="sc">+</span></span>
 <span id="cb26-6"><a href="correlações.html#cb26-6" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span><span class="dv">18</span>),<span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span><span class="dv">10</span>))</span></code></pre></div>
 <p><img src="RelatorioVelocidades_files/figure-html/unnamed-chunk-24-1.png" width="672" />
+<br>
 Nesse arquivo <em>bookdown</em> eu tive que diminuir o tamanho da legenda do eixo “y” para 10 pois não estava “cabendo” no gráfico, mas no relatório foi utilizado a fonte 18 para o eixo “y” (o mesmo tamanho da fonte do eixo “x”)</p>
 </div>
 <div id="correlograma-entre-indicadores-radarfrota-e-indicador-infrações" class="section level2 hasAnchor" number="6.4">
@@ -293,6 +295,7 @@ Após esse teste, foi feito o gráfico de correlação geral:</p>
 <span id="cb28-2"><a href="correlações.html#cb28-2" tabindex="-1"></a></span>
 <span id="cb28-3"><a href="correlações.html#cb28-3" tabindex="-1"></a><span class="fu">corrplot</span>(graf_corr, <span class="at">type =</span> <span class="st">&quot;lower&quot;</span>, <span class="at">method =</span> <span class="st">&quot;number&quot;</span>) </span></code></pre></div>
 <p><img src="RelatorioVelocidades_files/figure-html/unnamed-chunk-26-1.png" width="672" />
+<br>
 ## Correlação entre infrações e mortalidade<br />
 Para esse correlação foi feito um ajuste na base de dados do DataSus e teve de ser criado um <code>tibble</code>(um <em>Data Frame</em> evoluído) sobre as regiões das unidades da federação, classificando cada unidade da federação na sua respectiva região. Fazendo então a união de três bases, a base de mortalidade, a base de infrações e a base das regiões.</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="correlações.html#cb29-1" tabindex="-1"></a>rtdeaths_2022<span class="ot">&lt;-</span> <span class="fu">filter</span>(rtdeaths,rtdeaths<span class="sc">$</span>ano_ocorrencia <span class="sc">==</span> <span class="dv">2022</span>)</span>

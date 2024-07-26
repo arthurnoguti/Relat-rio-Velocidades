@@ -29,4 +29,4 @@ Esse documento está dividido em 5 partes, sendo elas:
   * Correlações entre indicadores.  
   
 ## Observações  
-Algumas bases de dados serão importadas pelo [*GitHub* do ONSV](https://github.com/ONSV), entretando a base de dados que representa a quantidade de radares com suas características e da extensão das rodovias em cada unidade da federação serão importadas diretamente do computador, pois para a utilização dessas, você deverá baixar o arquivo excel e mudar o diretório do script quando tiver algumas função do tipo `read_csv(SEU DIRETÓRIO)`
+Algumas bases de dados serão importadas pelo [*GitHub* do ONSV](https://github.com/ONSV), entretando a base de dados que representa a quantidade de radares com suas características e da extensão das rodovias em cada unidade da federação serão importadas diretamente do computador, para a utilização dessas, você deverá baixar o arquivo excel e mudar o diretório do script quando tiver alguma função do tipo `read_csv(SEU DIRETÓRIO)`
